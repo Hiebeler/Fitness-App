@@ -25,7 +25,7 @@ namespace FitnessApp.respository.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseNpgsql("name=fitnessDb");
+                optionsBuilder.UseNpgsql("Server=192.168.1.79;Port=5432;Database=fitness_app;User ID=postgres;Password=kZi.wepe");
             }
         }
 
