@@ -42,16 +42,21 @@ namespace FitnessApp.respository.GenericRepository
             _context.Entry(obj).State = EntityState.Modified;
         }
 
-        public void Delete(object id)
+        public String Delete(object id)
         {
             T existing = table.Find(id);
-            table.Remove(existing);
+            if (existing != null)
+            {
+                table.Remove(existing);
+                return "removed";
+            }
+
+            return "uid doesnt exist";
         }
 
         public void Save()
         {
             _context.SaveChanges();
         }
-
     }
 }
